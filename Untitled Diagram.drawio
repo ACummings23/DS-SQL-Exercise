@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-12-09T19:26:16.876Z" agent="5.0 (Windows)" etag="KwuAc97Jo_GlabA8wa0e" version="20.6.0" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2023-01-03T15:31:46.089Z" agent="5.0 (Windows)" etag="cNtoFeBJYUKoelg9tH9H" version="20.7.4" type="github" pages="4">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="2249" dy="752" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1621" dy="394" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -688,42 +688,53 @@
     </mxGraphModel>
   </diagram>
   <diagram id="zk2DIU-1irIdsyS0nt8i" name="Page-2">
-    <mxGraphModel dx="1185" dy="627" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="794" dy="394" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="kNexMOKvwtK2jCZMazaB-1" value="&lt;div&gt;Big query information:&lt;/div&gt;&lt;div&gt;$400 initial trial free usage&lt;/div&gt;&lt;div&gt;initial trial start/end date: tbd wait til fake data created &lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="kNexMOKvwtK2jCZMazaB-1" value="&lt;div&gt;Big query information:&lt;/div&gt;&lt;div&gt;$400 initial trial free usage&lt;/div&gt;&lt;div&gt;initial trial start/end date: tbd wait til fake data created &lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="130" y="60" width="490" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="kNexMOKvwtK2jCZMazaB-2" value="&lt;div&gt;Types of queries to display knowledge of:&lt;/div&gt;&lt;div&gt;-select all&lt;/div&gt;&lt;div&gt;-where statement(story&lt;br&gt;&lt;/div&gt;&lt;div&gt;-Group by &amp;amp; having&lt;/div&gt;&lt;div&gt;-order by and limit&lt;/div&gt;&lt;div&gt;-date functions&lt;/div&gt;&lt;div&gt;-inner,outer, left right joins&lt;/div&gt;&lt;div&gt;-subqueries&lt;/div&gt;&lt;div&gt;-correlated subqueries&lt;/div&gt;&lt;div&gt;-case when clause&lt;/div&gt;&lt;div&gt;-window functions&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="kNexMOKvwtK2jCZMazaB-2" value="&lt;div&gt;Types of queries to display knowledge of:&lt;/div&gt;&lt;div&gt;-select all&lt;/div&gt;&lt;div&gt;-where statement(story&lt;br&gt;&lt;/div&gt;&lt;div&gt;-Group by &amp;amp; having&lt;/div&gt;&lt;div&gt;-order by and limit&lt;/div&gt;&lt;div&gt;-date functions&lt;/div&gt;&lt;div&gt;-inner,outer, left right joins&lt;/div&gt;&lt;div&gt;-subqueries&lt;/div&gt;&lt;div&gt;-correlated subqueries&lt;/div&gt;&lt;div&gt;-case when clause&lt;/div&gt;&lt;div&gt;-window functions&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry y="320" width="490" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="f1jmzRqwrOwJC-6ix-m3-2" value="&lt;div&gt;&#39;Where&#39; Story:&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;-1. Filter out by lifecycle score&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;-2 Filter by hardware&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="f1jmzRqwrOwJC-6ix-m3-2" value="&lt;div&gt;&#39;Where&#39; Story:&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;-1. Filter out by lifecycle score&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;-2 Filter by hardware&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="120" y="540" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="f1jmzRqwrOwJC-6ix-m3-3" value="&lt;div&gt;&#39;Group by&#39; Story:&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;-1. Group by software having specific scores?&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;-2 Having specific network contstrains &lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="f1jmzRqwrOwJC-6ix-m3-3" value="&lt;div&gt;&#39;Group by&#39; Story:&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;-1. Group by software having specific scores?&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;-2 Having specific network contstrains &lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="320" y="540" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="f1jmzRqwrOwJC-6ix-m3-4" value="&lt;div&gt;&#39;Order by/Limit&#39; Story:&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;-1. Lmit to only see top scores of something &lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;-2 &lt;/font&gt;order by specific column&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="f1jmzRqwrOwJC-6ix-m3-4" value="&lt;div&gt;&#39;Order by/Limit&#39; Story:&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;-1. Lmit to only see top scores of something &lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;-2 &lt;/font&gt;order by specific column&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="510" y="540" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="f1jmzRqwrOwJC-6ix-m3-5" value="&lt;div&gt;&#39;Date&#39; Functions:&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;-1. Convert dates and look at dates and scores on each date?&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="f1jmzRqwrOwJC-6ix-m3-5" value="&lt;div&gt;&#39;Date&#39; Functions:&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;-1. Convert dates and look at dates and scores on each date?&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="110" y="630" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="f1jmzRqwrOwJC-6ix-m3-6" value="&lt;div&gt;Joining all the tables&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="f1jmzRqwrOwJC-6ix-m3-6" value="&lt;div&gt;Joining all the tables&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="330" y="640" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="f1jmzRqwrOwJC-6ix-m3-7" value="&lt;div&gt;Subqueries:&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;-see examples:https://learnsql.com/blog/sql-subquery-examples/&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="f1jmzRqwrOwJC-6ix-m3-7" value="&lt;div&gt;Subqueries:&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;-see examples:https://learnsql.com/blog/sql-subquery-examples/&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="520" y="630" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="f1jmzRqwrOwJC-6ix-m3-8" value="&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Correlated subqueries see &lt;/font&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;examples:https://learnsql.com/blog/sql-subquery-examples/&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="f1jmzRqwrOwJC-6ix-m3-8" value="&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Correlated subqueries see &lt;/font&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;examples:https://learnsql.com/blog/sql-subquery-examples/&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="110" y="730" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="f1jmzRqwrOwJC-6ix-m3-9" value="&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Case when Clause s &lt;/font&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;examples:https://www.w3schools.com/sql/sql_case.asp/&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="f1jmzRqwrOwJC-6ix-m3-9" value="&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Case when Clause s &lt;/font&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;examples:https://www.w3schools.com/sql/sql_case.asp/&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="330" y="730" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="f1jmzRqwrOwJC-6ix-m3-10" value="&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Window Functions &lt;/font&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;examples:https://www.w3schools.com/sql/sql_case.asp/&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="f1jmzRqwrOwJC-6ix-m3-10" value="&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Window Functions &lt;/font&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;examples:https://www.w3schools.com/sql/sql_case.asp/&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="520" y="730" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="IreJSy1I2UKciQ0AgojS" name="story2">
+    <mxGraphModel dx="794" dy="394" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sXGw_LXwzpuTFuFGoAhU-1" value="&lt;div&gt;1. Queries showing the creation of the Full Stack table from the starting 15 tables&lt;/div&gt;&lt;div&gt;2. &lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="90" width="250" height="220" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
