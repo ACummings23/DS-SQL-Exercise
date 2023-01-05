@@ -1,0 +1,150 @@
+########Andrew Cummings##########
+
+#######Full Query List###########
+
+###### 1 table/view joins #######
+
+#### BU_Apps ####
+## combined business unit/apps data
+select LOB,Asset_Type,App_State,App_Name,a.BU, BU_Desc,Server_Name,Server_Status,System_Environment
+        from `Util.Applications` as a
+        left join `Util.BU_Desc` as b
+        on a.BU=b.BU
+        left join `Util.Server_BU` as c 
+        on a.App_Name=c.App_ID
+
+#### Compute ####
+##combine all Compute tables 
+;
+select Server_Name, OS, Model, Data_Center,Clusters from `Util.Compute_Server_0` 
+union all
+select Server_Name, OS, Model, null,null from `Util.Compute_Server_3`
+union all
+select Server_Name, OS, Model, null,null from `Util.Compute_Servers_1`
+union all
+select Server_Name, OS, Model, null,null from `Util.Compute_Server_2`
+;
+#### LFC_Split ####
+##combine LFC scoring tables such that Hardware and Software scores are separate rows instead of singlular rows 
+select null as Stack_Hardware,Stack_Software,null as Hardware_LFC_Score,Software_LFC_Score,SW_Dates,null as HW_Dates from `Util.LFC_Scores`
+union all
+select Stack_Hardware,null as Stack_Software,Hardware_LFC_Score,null as Software_LFC_Score,null as SW_Dates,HW_Dates from `Util.LFC_Scores`
+;
+#### LFC_Server_temp ####
+##combine lfc scores with server details
+select Servers,a.Stack_Hardware,b.Stack_Software,Hardware_LFC_Score,Software_LFC_Score,HW_Dates,SW_Dates from `Util.lfc_server` as a
+        left join `Util.LFC_Split`as b
+        on a.Stack_Hardware=b.Stack_Hardware 
+union all
+select Servers,b.Stack_Hardware,a.Stack_Software,Hardware_LFC_Score,Software_LFC_Score,HW_Dates,SW_Dates from `Util.lfc_server` as a
+        left join `Util.LFC_Split`as b
+        on a.Stack_Software=b.Stack_Software
+
+#### San_Tables ####
+##Storage Area Network tables combining information around backup appliances, switches through server names 
+;
+select a.Server_name,OS,Product_name,San_Swithces,null as Backup_Appliance from `Util.Storage_San_Servers` as a
+        left join  `Util.Storage_San_Switches` as b
+        on a.Server_name=b.Server_name
+union all
+
+select a.Server_Name,OS,Product_name,null,Backup_Appliance from `Util.Storage_Backup_Servers` as a
+        left join `Util.Storage_Backup_Appliances` as b 
+        on a.Server_Name=b.Server_Name
+;
+#### Network ####
+## Network tables joining hardware with software
+select distinct Switch,VM,Switch_Software,MAX(Switch_Backup_Hardware) as backup_hardware,COUNT(Switch_Backup_Hardware) as Hardware_Dep from `Util.Network_VM_Address` as a 
+        left join `Util.Network_Switch` as b
+        on a.IP_address=b.IP_address
+        left join `Util.Network_Backup` as c 
+        on b.Switch=c.Hostname
+        group by Switch,Switch_Software,VM
+
+;
+#### Network Reduce ####
+##Network reduced to decrease many to many relationships
+select Switch_Software,max(Switch) as Switch,max(VM) as VM,max(backup_hardware) as backup_hardware,max(Hardware_Dep) as Hardware_Dep from `Util.Network`
+group by Switch_Software
+;
+#### LFC_San ####
+##first view join with BU/Apps data and Storage data
+select a.Server_Name,Asset_type,App_State, App_Name, BU,BU_Desc,
+Server_Status,System_Environment,OS,Product_name,San_Swithces as San_Switches,Backup_Appliance 
+from`Util.BU_Apps` as a
+left join `Util.San_Tables` as b
+on a.Server_Name=b.Server_name
+;
+#### LFC_San_Compute ####
+##second view adding in Compute data
+select a.Server_Name,Asset_type,App_State, App_Name, BU,BU_Desc,
+Server_Status,System_Environment,a.OS,Product_name,Model,Data_Center,Clusters 
+from `Util.LFC_San` as a
+left join `Util.Compute` as b
+on a.Server_Name=b.Server_name
+;
+####LFC_BU_San_Compute ####
+##third view adding in LFC data
+select Server_Name,Asset_type,App_State,App_Name,BU,BU_Desc,Server_Status,
+System_Environment,OS,Product_name,Model,Data_Center,Clusters,Stack_HW,Stack_SW,
+HW_Score,SW_Score,HW_Dates,SW_Dates
+from `Util.LFC_San_Compute` as a 
+left join `Util.LFC` as b
+on a.Server_Name=b.Servers
+;
+#### Full_Stack ####
+## add in Network
+select * from `Util.LFC_BU_Compute_Storage` as a 
+join `Util.Network_Reduce` as b
+on a.Stack_SW=b.Switch_Software
+;
+
+
+##### 2 Creating a view that can be exported to look at most at risk applications, Business units, components 
+
+## looking at most at risk Business Units 
+select BU,BU_Desc,AVG(SW_Score) as LFC_SW,AVG(HW_Score) as LFC_HW
+from `Util.Full_Stack` 
+group by BU,BU_Desc
+having LFC_SW+LFC_HW>4.4
+order by LFC_SW+LFC_HW desc 
+;
+## looking at most at risk apps
+
+select App_Name,AVG(SW_Score) as LFC_SW,AVG(HW_Score) as LFC_HW
+from `Util.Full_Stack`
+group by App_Name
+having LFC_SW+LFC_HW>5.8
+order by LFC_SW+LFC_HW desc 
+;
+## combine and create app-centric view showing at risk components, dependent BUs
+
+create or replace view `Util.Full_Stack_MostRisk` as 
+select a.App_Name,RANK() over(order by LFC_Score desc) as rank,Dep_BU,LFC_SW,LFC_HW,LFC_Score,Stack_HW,Stack_SW
+from 
+(
+  select App_Name,MAX(BU) as Dep_BU,
+AVG(SW_Score) as LFC_SW,AVG(HW_Score) as LFC_HW,AVG(SW_Score+HW_Score) as LFC_Score,
+from `Util.Full_Stack` 
+group by App_Name
+having LFC_SW+LFC_HW>4.5
+order by LFC_SW+LFC_HW desc
+) as a
+left join `Util.Full_Stack_Aux` as b
+on a.App_Name=b.App_Name
+order by rank
+;
+##### 3 perform some table cleanup for the full stack view by converting to date type for dates listed and adding in a new primary key
+
+## use row number function to create new primary key and store as Full_Stack_v1
+select row_number() over (order by Server_Name,Product_name,Model) as id,* from `Util.Full_Stack` as a
+order by id
+;
+## convert dates from integers to years 
+select id,parse_date('%Y', cast(HW_Dates as string)) as HW_Date_Converted,parse_date('%Y', cast(SW_Dates as string)) as SW_Date_Converted from `Util.Full_Stack_v1`
+;
+## add in dates back into Full Stack while removing old date integers from table and storing as Full_Stack_v2
+select a.id,Server_Name,Asset_type,App_State,App_Name,BU,BU_Desc,Server_Status,System_Environment,OS,Product_name,Model,Data_Center,Clusters,
+Stack_HW,Stack_SW,HW_Score,SW_Score,Switch_Software,Switch,VM,Backup_hardware,Hardware_Dep,HW_Date_Converted,SW_Date_Converted from `Util.Full_Stack_v1` as a
+join `Util.Date_Converted` as b
+on a.id=b.id
